@@ -2,7 +2,7 @@
 
 simply.text({
     title: 'Hello!',
-    subtitle: 'How are you?',
+    //subtitle: 'How are you?',
     body:   'blablablablablabla',
 }, true);
 
