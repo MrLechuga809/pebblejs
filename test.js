@@ -27,5 +27,5 @@ simply.text({
 }, true);
 
 simply.on('singleClick', function() {
-   simply.body(String.toString(txt)); 
+   simply.body(txt); 
 });
