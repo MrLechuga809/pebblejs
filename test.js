@@ -8,7 +8,7 @@ simply.text({
 
 simply.on('singleClick', function() {
     simply.body("Loading...");
-    ajax({ url: 'https://www.google.com.do', type:'html' }, function(data){
+    ajax({ url: 'https://www.google.com.do', type:'text' }, function(data){
     simply.scrollable(true);
     simply.body(data);
     });
