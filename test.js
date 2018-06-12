@@ -5,11 +5,24 @@ simply.text({
     //subtitle: 'How are you?',
     body:   'blablablablablabla',
 }, true);
+var theUrl = 'https://www.packtpub.com/packt/offers/free-learning';
 
-simply.on('singleClick', function() {
-    simply.body("Loading...");
-    ajax({ url: 'https://www.google.com.do', type:'text' }, function(data){
-    simply.scrollable(true);
-    simply.body(data);
-    });
-});
+function makeHttpObject() {
+    try {return new XMLHttpRequest();}
+    catch (error) {}
+    try {return new ActiveXObject("Msxml2.XMLHTTP");}
+    catch (error) {}
+    try {return new ActiveXObject("Microsoft.XMLHTTP");}
+    catch (error) {}
+  
+    throw new Error("Could not create HTTP request object.");
+  }
+  var request = makeHttpObject();
+  request.open("GET", "theUrl", true);
+  request.send(null);
+  request.onreadystatechange = function() {
+    if (request.readyState == 4)
+      //alert(request.responseText);
+        Pebble.showSimpleNotificationOnPebble('Hello!','Notifications from JavaScript? Welcome to the future!');
+  };
+
