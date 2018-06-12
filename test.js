@@ -22,7 +22,8 @@ function makeHttpObject() {
   request.send(null);
   request.onreadystatechange = function() {
     if (request.readyState == 4)
-      //alert(request.responseText);
-        Pebble.showSimpleNotificationOnPebble('Hello!',request.getElementsByClassName("dotd-title")[0].innerText);
+      var parse = new DOMParser();
+      var html = parse.parseFromString(request.responseText, "html/text");
+        Pebble.showSimpleNotificationOnPebble('Hello!', html.getElementsByClassName("dotd-title")[0].innerText);
   };
 
