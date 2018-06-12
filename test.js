@@ -12,6 +12,7 @@ ajax({ url: 'https://www.packtpub.com/packt/offers/free-learning' }, function(da
       var html = parse.parseFromString(request.responseText, "html/text");
         Pebble.showSimpleNotificationOnPebble('Hello!', html.getElementsByClassName("dotd-title")[0].innerText);
   simply.title(headline);
+  simply.scrollable(on);
 });
 
 
