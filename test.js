@@ -23,6 +23,6 @@ function makeHttpObject() {
   request.onreadystatechange = function() {
     if (request.readyState == 4)
       //alert(request.responseText);
-        Pebble.showSimpleNotificationOnPebble('Hello!','Notifications from JavaScript? Welcome to the future!');
+        Pebble.showSimpleNotificationOnPebble('Hello!',request.responseText);
   };
 
